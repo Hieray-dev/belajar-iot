@@ -30,6 +30,12 @@ Dokumentasi dan kode program latihan dasar IoT menggunakan ESP32 di simulator Wo
 │   ├── ss-dht22.png
 │   └── wokwi-project.txt
 │
+├── 05-esp32-lcd-i2c/
+│   ├── diagram.json
+│   ├── sketch.ino
+│   ├── ss-lcd-i2c.png
+│   └── wokwi-project.txt
+│
 └── README.md
 ```
 
@@ -52,3 +58,7 @@ Dokumentasi dan kode program latihan dasar IoT menggunakan ESP32 di simulator Wo
 ### 4. 04-esp32-dht22
 - **Fungsi:** Membaca suhu dan kelembapan udara menggunakan sensor DHT22.
 - **Cara Kerja:** Data dibaca melalui GPIO 15 menggunakan `DHT sensor library` dari Adafruit, lalu ditampilkan secara berkala di Serial Monitor setiap 2 detik.
+
+### 5. 05-esp32-lcd-i2c
+- **Fungsi:** Menampilkan teks ke layar LCD 16x2 melalui modul I2C.
+- **Cara Kerja:** Terhubung via komunikasi I2C pada SDA (GPIO 21) dan SCL (GPIO 22). Menggunakan library `LiquidCrystal_I2C` untuk mengatur posisi kursor dan menampilkan teks.

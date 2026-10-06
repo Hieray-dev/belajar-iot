@@ -1,0 +1,29 @@
+#include "DHT.h"
+
+#define DHTPIN 15
+#define DHTTYPE DHT22
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(115200);
+  Serial.println(F("Simulasi ESP32 + DHT22"));
+  dht.begin();
+}
+
+void loop() {
+  delay(2000);
+
+  float humidity = dht.readHumidity();
+  float temperature = dht.readTemperature();
+
+  if (isnan(humidity) || isnan(temperature)) {
+    Serial.println(F("Gagal membaca data dari sensor DHT22!"));
+    return;
+  }
+  Serial.print(F("Kelembapan: "));
+  Serial.print(humidity);
+  Serial.print(F("%  |  Suhu: "));
+  Serial.print(temperature);
+  Serial.println(F("°C"));
+}
