@@ -21,6 +21,13 @@ Dokumentasi dan kode program latihan dasar IoT menggunakan ESP32 di simulator Wo
 ├── 03-esp32-ultrasonic/
 │   ├── diagram.json
 │   ├── sketch.ino
+│   ├── ss-ultrasonic.png
+│   └── wokwi-project.txt
+│
+├── 04-esp32-dht22/
+│   ├── diagram.json
+│   ├── sketch.ino
+│   ├── ss-dht22.png
 │   └── wokwi-project.txt
 │
 └── README.md
@@ -40,4 +47,8 @@ Dokumentasi dan kode program latihan dasar IoT menggunakan ESP32 di simulator Wo
 
 ### 3. 03-esp32-ultrasonic
 - **Fungsi:** Mengukur jarak objek menggunakan sensor ultrasonik HC-SR04.
-- **Cara Kerja:** Pin TRIG (GPIO 5) memancarkan pulsa suara, lalu pin ECHO (GPIO 18) mengukur durasi pantulan untuk dihitung menjadi jarak (cm) dan ditampilkan di Serial Monitor.
+- **Cara Kerja:** Trigger pin (GPIO 5) memancarkan gelombang ultrasonik, lalu Echo pin (GPIO 18) menerima pantulannya. Waktu tempuh diukur dengan `pulseIn()` dan dikonversi ke cm.
+
+### 4. 04-esp32-dht22
+- **Fungsi:** Membaca suhu dan kelembapan udara menggunakan sensor DHT22.
+- **Cara Kerja:** Data dibaca melalui GPIO 15 menggunakan `DHT sensor library` dari Adafruit, lalu ditampilkan secara berkala di Serial Monitor setiap 2 detik.
